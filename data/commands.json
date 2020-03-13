@@ -1,0 +1,1429 @@
+[
+  null,
+  {
+    "name": "help",
+    "permissions": "NONE",
+    "restriction": "1",
+    "_id": "CxkiQ",
+    "actions": [
+      {
+        "member": "1",
+        "varName": "",
+        "permission": "ADMINISTRATOR",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "2",
+        "iffalseVal": "6",
+        "name": "Check Member Permissions"
+      },
+      {
+        "title": "Admin Commands",
+        "author": "",
+        "color": "RANDOM",
+        "url": "",
+        "authorIcon": "",
+        "authorUrl": "",
+        "imageUrl": "",
+        "thumbUrl": "",
+        "timestamp": "false",
+        "debug": "false",
+        "text": "",
+        "year": "",
+        "month": "",
+        "day": "",
+        "hour": "",
+        "minute": "",
+        "second": "",
+        "storage": "1",
+        "varName": "embed",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "fieldName": "mute @member <min>",
+        "message": "!mute @member <min> - mutes a member for the number of minutes you typed\nEx:!mute @Dominates Bot#4915 5 - this will mute @Dominates Bot#4915 for 5 mins",
+        "inline": "1",
+        "name": "Add Embed Field"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "fieldName": "kick @member",
+        "message": "!kick @member - kick a member \nEx:!kick @Dominates Bot#4915 - this will kick @Dominates Bot#4915",
+        "inline": "1",
+        "name": "Add Embed Field"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "fieldName": "ban @member",
+        "message": "!ban @member - kick a member \nEx:!ban @Dominates Bot#4915 - this will ban @Dominates Bot#4915",
+        "inline": "1",
+        "name": "Add Embed Field"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "fieldName": "clear <number>",
+        "message": "!clear <number> - deletes the number of massages you typed\nEx: !clear 10 - this will delete 10 massages from the channel you typed it in",
+        "inline": "1",
+        "name": "Add Embed Field"
+      }
+    ]
+  },
+  {
+    "name": "addcoins",
+    "permissions": "ADMINISTRATOR",
+    "restriction": "1",
+    "_id": "HKpbO",
+    "actions": [
+      {
+        "message": "0",
+        "varName": "",
+        "info": "0",
+        "ParamN": "2",
+        "separator": "",
+        "storage": "1",
+        "varName2": "coin",
+        "name": "Store Message Params"
+      },
+      {
+        "storage": "1",
+        "varName": "coin",
+        "conversion": "0",
+        "storage2": "1",
+        "varName2": "amount",
+        "name": "Convert Variable"
+      },
+      {
+        "member": "0",
+        "varName": "",
+        "dataName": "cash",
+        "changeType": "1",
+        "value": "tempVars(\"amount\")",
+        "name": "Control Member Data"
+      }
+    ]
+  },
+  {
+    "name": "clear",
+    "permissions": "ADMINISTRATOR",
+    "restriction": "1",
+    "_id": "SXIQz",
+    "actions": [
+      {
+        "message": "0",
+        "varName": "",
+        "info": "0",
+        "ParamN": "1",
+        "separator": "",
+        "storage": "1",
+        "varName2": "clear",
+        "name": "Store Message Params"
+      },
+      {
+        "channel": "0",
+        "count": "${tempVars(\"clear\")}",
+        "condition": "0",
+        "custom": "",
+        "varName": "",
+        "name": "Delete Bulk Messages"
+      },
+      { "storage": "0", "varName": "", "name": "Delete Message" }
+    ]
+  },
+  {
+    "name": "coinflip",
+    "permissions": "NONE",
+    "restriction": "1",
+    "_id": "hKmWe",
+    "actions": [
+      {
+        "comment": "©All rights reserved Blue Label#6215",
+        "color": "#00ffff",
+        "name": "Comment"
+      },
+      {
+        "info": "0",
+        "infoIndex": "1",
+        "storage": "1",
+        "varName": "amount",
+        "name": "Store Command Params"
+      },
+      {
+        "info": "0",
+        "infoIndex": "2",
+        "storage": "1",
+        "varName": "kind",
+        "name": "Store Command Params"
+      },
+      {
+        "storage": "1",
+        "varName": "amount",
+        "comparison": "3",
+        "value": "299",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "3",
+        "iffalseVal": "2",
+        "name": "Check Variable"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**ERROR:** The minimum coinflip's gamble amount is 300 cash.",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "storage": "1",
+        "varName": "amount",
+        "comparison": "5",
+        "value": "'.'",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "3",
+        "iffalseVal": "2",
+        "name": "Check Variable"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**ERROR:** You must to type a valid number.",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "comparison": "3",
+        "value": "tempVars(\"amount\")",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "3",
+        "iffalseVal": "2",
+        "name": "Check Member Data"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**ERROR:** You don't have enough cash.",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "storage": "1",
+        "varName": "kind",
+        "comparison": "0",
+        "value": "",
+        "iftrue": "3",
+        "iftrueVal": "2",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Check Variable"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**Wrong Format:**\n[p]coinflip <amount> <heads|tails>",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "storage": "1",
+        "varName": "kind",
+        "comparison": "1",
+        "value": "\"heads\"",
+        "iftrue": "3",
+        "iftrueVal": "3",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Check Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "kind",
+        "comparison": "1",
+        "value": "\"tails\"",
+        "iftrue": "3",
+        "iftrueVal": "2",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Check Variable"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**Wrong Format:**\n[p]coinflip <amount> <heads|tails>",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "title": "",
+        "author": "Coinflip",
+        "color": "",
+        "timestamp": "true",
+        "url": "",
+        "authorIcon": "https://bitcoin.org/img/icons/opengraph.png?1557691559",
+        "imageUrl": "",
+        "thumbUrl": "https://cdn.dribbble.com/users/58530/screenshots/2323771/coin-flip.gif",
+        "storage": "1",
+        "varName": "embed",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "message": "Requested by: ${member.displayName}",
+        "footerIcon": "${msg.author.displayAvatarURL}",
+        "name": "Set Embed Footer"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "fieldName": "Bet Amount",
+        "message": "${tempVars(\"amount\")}",
+        "inline": "0",
+        "name": "Add Embed Field"
+      },
+      {
+        "storage": "1",
+        "varName": "number",
+        "min": "1",
+        "max": "2",
+        "name": "Generate Random Number"
+      },
+      {
+        "storage": "1",
+        "varName": "number",
+        "comparison": "1",
+        "value": "1",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "3",
+        "iffalseVal": "9",
+        "name": "Check Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "message": "You chose **${tempVars(\"kind\")}**.\nResult: **Heads**",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "kind",
+        "comparison": "1",
+        "value": "\"heads\"",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "3",
+        "iffalseVal": "3",
+        "name": "Check Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "fieldName": "Result",
+        "message": "Winner!",
+        "inline": "0",
+        "name": "Add Embed Field"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "changeType": "1",
+        "value": "Number(tempVars(\"amount\"))",
+        "name": "Control Member Data"
+      },
+      { "count": "2", "name": "Skip Actions" },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "fieldName": "Result",
+        "message": "Lost!",
+        "inline": "0",
+        "name": "Add Embed Field"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "changeType": "1",
+        "value": "Number(-tempVars(\"amount\"))",
+        "name": "Control Member Data"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "channel": "0",
+        "varName2": "",
+        "storage3": "0",
+        "varName3": "",
+        "name": "Send Embed Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "message": "You chose **${tempVars(\"kind\")}**.\nResult: **Tails**",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "kind",
+        "comparison": "1",
+        "value": "\"tails\"",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "3",
+        "iffalseVal": "3",
+        "name": "Check Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "fieldName": "Result",
+        "message": "Winner!",
+        "inline": "0",
+        "name": "Add Embed Field"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "changeType": "1",
+        "value": "Number(tempVars(\"amount\"))",
+        "name": "Control Member Data"
+      },
+      { "count": "2", "name": "Skip Actions" },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "fieldName": "Result",
+        "message": "Lost!",
+        "inline": "0",
+        "name": "Add Embed Field"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "changeType": "1",
+        "value": "Number(-tempVars(\"amount\"))",
+        "name": "Control Member Data"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "channel": "0",
+        "varName2": "",
+        "storage3": "0",
+        "varName3": "",
+        "name": "Send Embed Message"
+      }
+    ]
+  },
+  {
+    "name": "coins",
+    "permissions": "NONE",
+    "restriction": "1",
+    "_id": "owgSa",
+    "actions": [
+      {
+        "condition": "0",
+        "comparison": "0",
+        "value": "1",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "2",
+        "iffalseVal": "12",
+        "name": "Check Parameters"
+      },
+      {
+        "message": "0",
+        "varName": "",
+        "info": "0",
+        "ParamN": "1",
+        "separator": "",
+        "storage": "1",
+        "varName2": "memberstring",
+        "name": "Store Message Params"
+      },
+      {
+        "info": "1",
+        "find": "${tempVars(\"memberstring\")}",
+        "storage": "1",
+        "varName": "member",
+        "find2": "0",
+        "name": "Find Member"
+      },
+      {
+        "member": "2",
+        "varName": "member",
+        "dataName": "cash",
+        "defaultVal": "0",
+        "storage": "1",
+        "varName2": "coins",
+        "name": "Store Member Data"
+      },
+      {
+        "storage": "1",
+        "varName": "coins",
+        "conversion": "0",
+        "storage2": "1",
+        "varName2": "coinss",
+        "name": "Convert Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "coinss",
+        "conversion": "2",
+        "storage2": "1",
+        "varName2": "coinsstr",
+        "name": "Convert Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "coinsstr",
+        "comparison": "1",
+        "value": "\"NaN\"",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "2",
+        "iffalseVal": "10",
+        "name": "Check Variable"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "${tempVars(\"member\")} doesn't have coins",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "${tempVars(\"member\")} Has **${tempVars(\"coinss\")}** coins",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "defaultVal": "0",
+        "storage": "1",
+        "varName2": "coins",
+        "name": "Store Member Data"
+      },
+      {
+        "storage": "1",
+        "varName": "coins",
+        "conversion": "0",
+        "storage2": "1",
+        "varName2": "coinss",
+        "name": "Convert Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "coinss",
+        "conversion": "2",
+        "storage2": "1",
+        "varName2": "coinsstr",
+        "name": "Convert Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "coinsstr",
+        "comparison": "1",
+        "value": "\"NaN\"",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "2",
+        "iffalseVal": "18",
+        "name": "Check Variable"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "${member}, You don't have coins",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "${member}, You have **${tempVars(\"coinss\")}** coins",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "slots",
+    "permissions": "NONE",
+    "restriction": "1",
+    "_id": "tueDJ",
+    "actions": [
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "play",
+        "comparison": "1",
+        "value": "1",
+        "iftrue": "0",
+        "iftrueVal": "66",
+        "iffalse": "3",
+        "iffalseVal": "2",
+        "name": "Check Member Data"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**ERROR:**\nSlot Machine already running for you.",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "info": "0",
+        "infoIndex": "1",
+        "storage": "1",
+        "varName": "amount",
+        "name": "Store Command Params"
+      },
+      {
+        "storage": "1",
+        "varName": "amount",
+        "comparison": "0",
+        "value": "299",
+        "iftrue": "3",
+        "iftrueVal": "2",
+        "iffalse": "0",
+        "iffalseVal": "58",
+        "name": "Check Variable"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**Wrong Format:**\n[p]slots <Amount>",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "storage": "1",
+        "varName": "amount",
+        "comparison": "5",
+        "value": "'.'",
+        "iftrue": "0",
+        "iftrueVal": "60",
+        "iffalse": "3",
+        "iffalseVal": "2",
+        "name": "Check Variable"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**ERROR:**\nThe number must to be fully number, without '.'.",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "storage": "1",
+        "varName": "amount",
+        "comparison": "4",
+        "value": "299",
+        "iftrue": "3",
+        "iftrueVal": "2",
+        "iffalse": "0",
+        "iffalseVal": "62",
+        "name": "Check Variable"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**ERROR:**\nThe amount minimum is 300 cash.",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "comparison": "1",
+        "value": "tempVars(\"amount\")",
+        "iftrue": "3",
+        "iftrueVal": "3",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Check Member Data"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "comparison": "4",
+        "value": "tempVars(\"amount\")",
+        "iftrue": "3",
+        "iftrueVal": "2",
+        "iffalse": "0",
+        "iffalseVal": "64",
+        "name": "Check Member Data"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**ERROR:**\nYou Don't have this amount of cash.",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      { "storage": "1", "varName": "list", "name": "Create List" },
+      {
+        "storage": "1",
+        "varName": "list",
+        "addType": "0",
+        "position": "",
+        "value": "\":banana:\"",
+        "name": "Add Item to List"
+      },
+      {
+        "storage": "1",
+        "varName": "list",
+        "addType": "0",
+        "position": "",
+        "value": "\":strawberry:\"",
+        "name": "Add Item to List"
+      },
+      {
+        "storage": "1",
+        "varName": "list",
+        "addType": "0",
+        "position": "",
+        "value": "\":tomato:\"",
+        "name": "Add Item to List"
+      },
+      {
+        "storage": "1",
+        "varName": "list",
+        "addType": "0",
+        "position": "",
+        "value": "\":apple:\"",
+        "name": "Add Item to List"
+      },
+      {
+        "storage": "1",
+        "varName": "list",
+        "addType": "0",
+        "position": "",
+        "value": "\":eggplant:\"",
+        "name": "Add Item to List"
+      },
+      {
+        "storage": "1",
+        "varName": "list",
+        "addType": "0",
+        "position": "",
+        "value": "\":grapes:\"",
+        "name": "Add Item to List"
+      },
+      {
+        "storage": "1",
+        "varName": "list",
+        "addType": "0",
+        "position": "",
+        "value": "\":watermelon:\"",
+        "name": "Add Item to List"
+      },
+      {
+        "title": "Slot Machine will start in 3 seconds.",
+        "author": "",
+        "color": "",
+        "timestamp": "false",
+        "url": "",
+        "authorIcon": "",
+        "imageUrl": "",
+        "thumbUrl": "",
+        "storage": "1",
+        "varName": "begin",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "begin",
+        "channel": "0",
+        "varName2": "",
+        "storage3": "1",
+        "varName3": "begin-embed",
+        "name": "Send Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "time",
+        "changeType": "0",
+        "value": "1",
+        "name": "Control Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "result-after",
+        "changeType": "0",
+        "value": "0",
+        "name": "Control Variable"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "play",
+        "changeType": "0",
+        "value": "1",
+        "name": "Control Member Data"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "defaultVal": "0",
+        "storage": "1",
+        "varName2": "member-cash",
+        "name": "Store Member Data"
+      },
+      {
+        "FirstNumber": "${tempVars(\"member-cash\")}",
+        "info": "1",
+        "SecondNumber": "${tempVars(\"amount\")}",
+        "storage": "1",
+        "varName": "cash-set",
+        "name": "Basic Math Operation"
+      },
+      {
+        "storage": "1",
+        "varName": "Result",
+        "changeType": "0",
+        "value": "\"Lost!\"",
+        "name": "Control Variable"
+      },
+      { "time": "2", "measurement": "1", "name": "Wait" },
+      {
+        "list": "7",
+        "varName": "list",
+        "getType": "2",
+        "position": "",
+        "storage": "1",
+        "varName2": "item-1",
+        "name": "Get Item from List"
+      },
+      {
+        "list": "7",
+        "varName": "list",
+        "getType": "2",
+        "position": "",
+        "storage": "1",
+        "varName2": "item-2",
+        "name": "Get Item from List"
+      },
+      {
+        "list": "7",
+        "varName": "list",
+        "getType": "2",
+        "position": "",
+        "storage": "1",
+        "varName2": "item-3",
+        "name": "Get Item from List"
+      },
+      {
+        "storage": "1",
+        "varName": "time",
+        "comparison": "1",
+        "value": "1",
+        "iftrue": "3",
+        "iftrueVal": "3",
+        "iffalse": "0",
+        "iffalseVal": "17",
+        "name": "Check Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "time",
+        "comparison": "1",
+        "value": "2",
+        "iftrue": "3",
+        "iftrueVal": "4",
+        "iffalse": "0",
+        "iffalseVal": "19",
+        "name": "Check Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "time",
+        "comparison": "1",
+        "value": "3",
+        "iftrue": "3",
+        "iftrueVal": "5",
+        "iffalse": "3",
+        "iffalseVal": "9",
+        "name": "Check Variable"
+      },
+      { "count": "5", "name": "Skip Actions" },
+      {
+        "storage": "1",
+        "varName": "time",
+        "changeType": "0",
+        "value": "2",
+        "name": "Control Variable"
+      },
+      { "count": "3", "name": "Skip Actions" },
+      {
+        "storage": "1",
+        "varName": "time",
+        "changeType": "0",
+        "value": "3",
+        "name": "Control Variable"
+      },
+      { "count": "1", "name": "Skip Actions" },
+      {
+        "storage": "1",
+        "varName": "time",
+        "changeType": "0",
+        "value": "4",
+        "name": "Control Variable"
+      },
+      {
+        "title": "Slot Machine",
+        "author": "Slot Machine",
+        "color": "",
+        "timestamp": "false",
+        "url": "",
+        "authorIcon": "https://static.thenounproject.com/png/117645-200.png",
+        "imageUrl": "",
+        "thumbUrl": "",
+        "storage": "1",
+        "varName": "hey",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "hey",
+        "message": "Rolling...\n\n${tempVars(\"item-1\")} | ${tempVars(\"item-2\")} | ${tempVars(\"item-3\")}",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "begin-embed",
+        "message": "",
+        "storage2": "1",
+        "varName2": "hey",
+        "name": "Edit Message"
+      },
+      {
+        "storage": "1",
+        "varName": "time",
+        "comparison": "1",
+        "value": "4",
+        "iftrue": "0",
+        "iftrueVal": "29",
+        "iffalse": "2",
+        "iffalseVal": "35",
+        "name": "Check Variable"
+      },
+      { "time": "1", "measurement": "1", "name": "Wait" },
+      {
+        "storage": "1",
+        "varName": "item-1",
+        "comparison": "1",
+        "value": "tempVars(\"item-2\")",
+        "iftrue": "3",
+        "iftrueVal": "1",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Check Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "item-2",
+        "comparison": "1",
+        "value": "tempVars(\"item-3\")",
+        "iftrue": "0",
+        "iftrueVal": "1",
+        "iffalse": "2",
+        "iffalseVal": "64",
+        "name": "Check Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "Result",
+        "changeType": "0",
+        "value": "\"Half Winner!\"",
+        "name": "Control Variable"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "slot-win",
+        "changeType": "1",
+        "value": "parseInt(1)",
+        "name": "Control Member Data"
+      },
+      {
+        "FirstNumber": "${tempVars(\"amount\")}",
+        "info": "2",
+        "SecondNumber": "3",
+        "storage": "1",
+        "varName": "result-after",
+        "name": "Basic Math Operation"
+      },
+      {
+        "FirstNumber": "${tempVars(\"member-cash\")}",
+        "info": "0",
+        "SecondNumber": "${tempVars(\"result-after\")}",
+        "storage": "1",
+        "varName": "cash-set",
+        "name": "Basic Math Operation"
+      },
+      {
+        "storage": "1",
+        "varName": "item-1",
+        "comparison": "1",
+        "value": "tempVars(\"item-3\")",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "3",
+        "iffalseVal": "4",
+        "name": "Check Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "Result",
+        "changeType": "0",
+        "value": "\"Winner!\"",
+        "name": "Control Variable"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "slot-win",
+        "changeType": "1",
+        "value": "parseInt(1)",
+        "name": "Control Member Data"
+      },
+      {
+        "FirstNumber": "${tempVars(\"amount\")}",
+        "info": "2",
+        "SecondNumber": "10",
+        "storage": "1",
+        "varName": "result-after",
+        "name": "Basic Math Operation"
+      },
+      {
+        "FirstNumber": "${tempVars(\"member-cash\")}",
+        "info": "0",
+        "SecondNumber": "${tempVars(\"result-after\")}",
+        "storage": "1",
+        "varName": "cash-set",
+        "name": "Basic Math Operation"
+      },
+      {
+        "storage": "1",
+        "varName": "hey",
+        "message": "SlotMachine Ended...\n\n${tempVars(\"item-1\")} | ${tempVars(\"item-2\")} | ${tempVars(\"item-3\")}",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "hey",
+        "fieldName": "Amount Gambled",
+        "message": "${tempVars(\"amount\")}",
+        "inline": "0",
+        "name": "Add Embed Field"
+      },
+      {
+        "storage": "1",
+        "varName": "hey",
+        "fieldName": "Prize",
+        "message": "${Math.floor(tempVars(\"result-after\"))}",
+        "inline": "0",
+        "name": "Add Embed Field"
+      },
+      {
+        "storage": "1",
+        "varName": "hey",
+        "fieldName": "Result",
+        "message": "${tempVars(\"Result\")}",
+        "inline": "0",
+        "name": "Add Embed Field"
+      },
+      {
+        "storage": "1",
+        "varName": "hey",
+        "message": "Requested By: ${member.displayName}",
+        "footerIcon": "${msg.author.displayAvatarURL}",
+        "name": "Set Embed Footer"
+      },
+      {
+        "storage": "1",
+        "varName": "begin-embed",
+        "message": "",
+        "storage2": "1",
+        "varName2": "hey",
+        "name": "Edit Message"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "changeType": "0",
+        "value": "tempVars(\"cash-set\")",
+        "name": "Control Member Data"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "play",
+        "changeType": "0",
+        "value": "parseInt(0)",
+        "name": "Control Member Data"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "total-slot",
+        "changeType": "1",
+        "value": "parseInt(1)",
+        "name": "Control Member Data"
+      }
+    ]
+  },
+  {
+    "name": "givecoins",
+    "permissions": "NONE",
+    "restriction": "1",
+    "_id": "rNJVB",
+    "actions": [
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "defaultVal": "0",
+        "storage": "1",
+        "varName2": "coins",
+        "name": "Store Member Data"
+      },
+      {
+        "message": "0",
+        "varName": "",
+        "info": "0",
+        "ParamN": "2",
+        "separator": "",
+        "storage": "1",
+        "varName2": "coinstogive",
+        "name": "Store Message Params"
+      },
+      {
+        "storage": "1",
+        "varName": "coinstogive",
+        "conversion": "0",
+        "storage2": "1",
+        "varName2": "coinsgiven",
+        "name": "Convert Variable"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "comparison": "3",
+        "value": "tempVars(\"coinstogive\")",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "2",
+        "iffalseVal": "7",
+        "name": "Check Member Data"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "***ERROR***\n${member} , You dont have enough coins to give!",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "FirstNumber": "0",
+        "info": "1",
+        "SecondNumber": "${tempVars(\"coinsgiven\")}",
+        "storage": "1",
+        "varName": "coinstaken",
+        "name": "Basic Math Operation"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "dataName": "cash",
+        "changeType": "1",
+        "value": "tempVars(\"coinstaken\")",
+        "name": "Control Member Data"
+      },
+      {
+        "member": "0",
+        "varName": "",
+        "dataName": "cash",
+        "changeType": "1",
+        "value": "tempVars(\"coinsgiven\")",
+        "name": "Control Member Data"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**${mentionedUser} , You have been given ${tempVars(\"coinsgiven\")} coins by ${member}**",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "say",
+    "permissions": "ADMINISTRATOR",
+    "restriction": "1",
+    "_id": "kPQVO",
+    "actions": [
+      {
+        "message": "0",
+        "varName": "",
+        "info": "1",
+        "ParamN": "2",
+        "separator": "",
+        "storage": "1",
+        "varName2": "msg",
+        "name": "Store Message Params"
+      },
+      {
+        "title": "",
+        "author": "",
+        "color": "FF0000",
+        "url": "",
+        "authorIcon": "",
+        "authorUrl": "https://cdn.discordapp.com/attachments/655341093155635211/683230194009374741/png.png",
+        "imageUrl": "",
+        "thumbUrl": "https://cdn.discordapp.com/attachments/655341093155635211/683230194009374741/png.png",
+        "timestamp": "false",
+        "debug": "false",
+        "text": "",
+        "year": "",
+        "month": "",
+        "day": "",
+        "hour": "",
+        "minute": "",
+        "second": "",
+        "storage": "1",
+        "varName": "embed",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "message": "${tempVars(\"msg\")}",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "channel": "3",
+        "varName2": "",
+        "storage3": "0",
+        "varName3": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "messageContent": "",
+        "name": "Send Embed Message"
+      },
+      { "storage": "0", "varName": "", "name": "Delete Message" }
+    ],
+    "comType": "0"
+  },
+  {
+    "name": "massage",
+    "permissions": "ADMINISTRATOR",
+    "restriction": "1",
+    "_id": "mctSk",
+    "actions": [
+      {
+        "message": "0",
+        "varName": "",
+        "info": "1",
+        "ParamN": "2",
+        "separator": "",
+        "storage": "1",
+        "varName2": "msg",
+        "name": "Store Message Params"
+      },
+      {
+        "channel": "3",
+        "varName": "",
+        "message": "${tempVars(\"msg\")}",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      { "storage": "0", "varName": "", "name": "Delete Message" }
+    ],
+    "comType": "0"
+  },
+  {
+    "name": "kick",
+    "permissions": "KICK_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      { "storage": "0", "varName": "", "name": "Delete Message" },
+      { "member": "0", "varName": "", "reason": "", "name": "Kick Member" }
+    ],
+    "_id": "uOBeN"
+  },
+  {
+    "name": "ban",
+    "permissions": "BAN_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      { "storage": "0", "varName": "", "name": "Delete Message" },
+      { "member": "0", "varName": "", "reason": "", "name": "Ban Member" }
+    ],
+    "_id": "GJCrS"
+  },
+  {
+    "name": "mute",
+    "permissions": "MUTE_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      {
+        "member": "0",
+        "varName2": "",
+        "role": "4",
+        "varName": "mute",
+        "name": "Add Member Role"
+      },
+      {
+        "message": "0",
+        "varName": "",
+        "info": "0",
+        "ParamN": "2",
+        "separator": "",
+        "storage": "1",
+        "varName2": "time",
+        "name": "Store Message Params"
+      },
+      {
+        "storage": "1",
+        "varName": "time",
+        "conversion": "0",
+        "storage2": "1",
+        "varName2": "realtime",
+        "name": "Convert Variable"
+      },
+      { "storage": "0", "varName": "", "name": "Delete Message" },
+      {
+        "time": "${tempVars(\"realtime\")}",
+        "measurement": "2",
+        "name": "Wait"
+      },
+      {
+        "member": "0",
+        "varName2": "",
+        "role": "4",
+        "varName": "mute",
+        "name": "Remove Member Role"
+      }
+    ],
+    "_id": "mBScU"
+  },
+  {
+    "name": "unmute",
+    "permissions": "MUTE_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      {
+        "condition": "1",
+        "comparison": "0",
+        "value": "1",
+        "iftrue": "3",
+        "iftrueVal": "2",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Check Parameters"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "```\nPlease mention one user in order to unmute them!\n!Unmute [@user]\n```",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      },
+      { "name": "End Action Sequence" },
+      { "member": "0", "varName": "", "mute": "1", "name": "Set Member Mute" }
+    ],
+    "_id": "ahWyd"
+  }
+]

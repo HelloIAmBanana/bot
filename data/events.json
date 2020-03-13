@@ -1,0 +1,33 @@
+[
+  null,
+  {
+    "name": "Status",
+    "temp": "25",
+    "event-type": "3",
+    "_id": "HGoeN",
+    "actions": [
+      {
+        "server": "0",
+        "varName": "",
+        "info": "36",
+        "storage": "1",
+        "varName2": "members",
+        "name": "Store Server Info"
+      },
+      {
+        "activity": "2",
+        "nameText": " ${tempVars(\"members\")} Members ",
+        "url": "",
+        "stat": "0",
+        "name": "Set Bot Activity"
+      },
+      { "time": "20", "measurement": "1", "name": "Wait" },
+      {
+        "gameName": "Made by Banana#8148 With 💓",
+        "gameLink": "",
+        "name": "Set Bot Game"
+      },
+      { "time": "5", "measurement": "1", "name": "Wait" }
+    ]
+  }
+]
